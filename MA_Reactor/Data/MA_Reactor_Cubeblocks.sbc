@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CategoryClasses>
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>MA</DisplayName>
+      <Name>AutoMcD_Astronautical</Name>
+      <ItemIds>
+		<string>Reactor/MA_Reactor</string>
+      </ItemIds>
+    </Category>
+  </CategoryClasses>
+
+
+ <CubeBlocks>
+  
+
+    <Definition xsi:type="MyObjectBuilder_ReactorDefinition">
+      <Id>
+        <TypeId>Reactor</TypeId>
+        <SubtypeId>MA_Reactor</SubtypeId>
+      </Id>
+      <DisplayName>MA Upgradable Reactor</DisplayName>
+      <Icon>Textures\GUI\Icons\Cubes\nuclear_reactor_large.dds</Icon>
+      <Description>Just look at this old thing LOL</Description>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="3" y="2" z="3" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\MA_Reactor.mwm</Model>
+      <Components>
+        <Component Subtype="SteelPlate" Count="600" />
+        <Component Subtype="Construction" Count="70" />
+        <Component Subtype="MetalGrid" Count="40" />
+        <Component Subtype="LargeTube" Count="40" />
+        <Component Subtype="Superconductor" Count="100" />
+        <Component Subtype="Reactor" Count="1000" />
+        <Component Subtype="Motor" Count="20" />
+        <Component Subtype="Computer" Count="75" />
+        <Component Subtype="SteelPlate" Count="200" />
+      </Components>
+      <CriticalComponent Subtype="Computer" Index="0" />
+	<MountPoints>
+		<MountPoint Side="Left" StartX="1.00" StartY="0.00" EndX="2.00" EndY="2.00" />
+		<MountPoint Side="Right" StartX="1.00" StartY="0.00" EndX="2.00" EndY="2.00" />
+		<MountPoint Side="Top" StartX="0.00" StartY="1.00" EndX="0.50" EndY="2.00" />
+		<MountPoint Side="Top" StartX="2.50" StartY="1.00" EndX="3.00" EndY="2.00" />
+		<MountPoint Side="Bottom" StartX="0.00" StartY="1.00" EndX="0.50" EndY="2.00" />
+		<MountPoint Side="Bottom" StartX="2.50" StartY="1.00" EndX="3.00" EndY="2.00" />
+	</MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.16" File="Models\Cubes\Large\GeneratorLargeConstruction_1.mwm" />
+        <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\GeneratorLargeConstruction_2.mwm" />
+        <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Large\GeneratorLargeConstruction_3.mwm" />
+        <Model BuildPercentUpperBound="0.83" File="Models\Cubes\Large\GeneratorLargeConstruction_4.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GeneratorLargeConstruction_5.mwm" />
+      </BuildProgressModels>
+      <BlockPairName>MA_Reactor</BlockPairName>
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>100</BuildTimeSeconds>
+      <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+      <MaxPowerOutput>100</MaxPowerOutput>
+      <InventorySize>
+        <X>.5</X>
+        <Y>.5</Y>
+        <Z>.5</Z>
+      </InventorySize>
+      <FuelId>
+        <TypeId>Ingot</TypeId>
+        <SubtypeId>Uranium</SubtypeId>
+      </FuelId>
+      <PrimarySound>ShipLrgNuclearLrg</PrimarySound>
+      <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+      <DamagedSound>ParticleElectrical</DamagedSound>
+      <EmissiveColorPreset>Default</EmissiveColorPreset>
+      <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+      <DestroySound>WepLrgWarheadExpl</DestroySound>
+      <PCU>25</PCU>
+      <IsAirTight>false</IsAirTight>
+    </Definition>
+		
+		
+<!-- MA_Plasma_Conduit -->
+    <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+      <Id>
+        <TypeId>Thrust</TypeId>
+        <SubtypeId>MA_Plasma_Conduit</SubtypeId>
+      </Id>
+      <DisplayName>Plasma Conduit</DisplayName>
+      <Icon>Textures\GUI\Icons\MA_Plasma_Conduit.png</Icon>
+      <Description>Description_IonThrust</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\MA_Reactor\MA_Plasma_Conduit.mwm</Model>
+      <ThrusterType>Hydrogen</ThrusterType>
+      <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+      <Components>
+        <Component Subtype="SteelPlate" Count="15" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="LargeTube" Count="8" />
+        <Component Subtype="Thrust" Count="80" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+				<MountPoint Side="Back" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+			</MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\MA_Plasma_Conduit.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\MA_Plasma_Conduit.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\MA_Plasma_Conduit.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <StaticMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <BlockPairName>MA_Plasma_Conduit</BlockPairName>
+      <Center x="0" y="0" z="0" />
+ 
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+
+      <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+      <FuelConverter>
+        <FuelId>
+          <TypeId>GasProperties</TypeId>
+          <SubtypeId>Hydrogen</SubtypeId>
+        </FuelId>
+        <Efficiency>1</Efficiency>
+      </FuelConverter>	  
+      <ForceMagnitude>0</ForceMagnitude>
+      <MaxPowerConsumption>0.00002</MaxPowerConsumption>
+      <MinPowerConsumption>0.00002</MinPowerConsumption>
+      <SlowdownFactor>0</SlowdownFactor>
+
+      <MinPlanetaryInfluence>0</MinPlanetaryInfluence>
+      <MaxPlanetaryInfluence>0</MaxPlanetaryInfluence>
+      <EffectivenessAtMinInfluence>0</EffectivenessAtMinInfluence>
+      <EffectivenessAtMaxInfluence>0</EffectivenessAtMaxInfluence>
+
+      <FlameDamageLengthScale>0</FlameDamageLengthScale>
+      <FlameLengthScale>2</FlameLengthScale>
+      <FlameIdleColor>
+        <X>1.2</X>
+        <Y>0.5</Y>
+        <Z>1.5</Z>
+        <W>0.75</W>
+      </FlameIdleColor>
+      <FlameFullColor>
+        <X>0.1</X>
+        <Y>0.8</Y>
+        <Z>0.8</Z>
+        <W>0.75</W>
+      </FlameFullColor>
+      <FlamePointMaterial>EngineThrustMiddle</FlamePointMaterial>
+      <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+      <FlameFlare>LargeGridSmallThruster</FlameFlare>
+      <FlameVisibilityDistance>150</FlameVisibilityDistance>
+      <FlameGlareQuerySize>1</FlameGlareQuerySize>
+      <PrimarySound>LrgShipSmJet</PrimarySound>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>15</PCU>      
+	  <EmissiveColorPreset>Default</EmissiveColorPreset>
+    </Definition>		
+		
+<!-- MA_Plasma_Conduit -->
+    <Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+      <Id>
+        <TypeId>Thrust</TypeId>
+        <SubtypeId>MA_Plasma_Conduit_Junction</SubtypeId>
+      </Id>
+      <DisplayName>Plasma Conduit Junction</DisplayName>
+      <Icon>Textures\GUI\Icons\MA_Plasma_Conduit_Junction.png</Icon>
+      <Description>Description_IonThrust</Description>
+      <CubeSize>Large</CubeSize>
+        <GuiVisible>false</GuiVisible>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="1" y="1" z="1" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\MA_Reactor\MA_Plasma_Conduit_Junction.mwm</Model>
+      <ThrusterType>Hydrogen</ThrusterType>
+      <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+      <Components>
+        <Component Subtype="SteelPlate" Count="15" />
+        <Component Subtype="Construction" Count="40" />
+        <Component Subtype="LargeTube" Count="8" />
+        <Component Subtype="Thrust" Count="80" />
+        <Component Subtype="Construction" Count="20" />
+        <Component Subtype="SteelPlate" Count="10" />
+      </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+				<MountPoint Side="Back" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+				<MountPoint Side="Left" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+				<MountPoint Side="Right" StartX="0.4" StartY="0.4" EndX="0.6" EndY="0.6"/>
+			</MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\MA_Plasma_Conduit.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\MA_Plasma_Conduit.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\MA_Plasma_Conduit.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <StaticMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <BlockPairName>MA_Plasma_Conduit_Junction</BlockPairName>
+      <Center x="0" y="0" z="0" />
+ 
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>40</BuildTimeSeconds>
+
+      <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+      <FuelConverter>
+        <FuelId>
+          <TypeId>GasProperties</TypeId>
+          <SubtypeId>Hydrogen</SubtypeId>
+        </FuelId>
+        <Efficiency>1</Efficiency>
+      </FuelConverter>	  
+      <ForceMagnitude>0</ForceMagnitude>
+      <MaxPowerConsumption>0.00002</MaxPowerConsumption>
+      <MinPowerConsumption>0.00002</MinPowerConsumption>
+      <SlowdownFactor>0</SlowdownFactor>
+
+      <MinPlanetaryInfluence>0</MinPlanetaryInfluence>
+      <MaxPlanetaryInfluence>0</MaxPlanetaryInfluence>
+      <EffectivenessAtMinInfluence>0</EffectivenessAtMinInfluence>
+      <EffectivenessAtMaxInfluence>0</EffectivenessAtMaxInfluence>
+
+      <FlameDamageLengthScale>0</FlameDamageLengthScale>
+      <FlameLengthScale>2</FlameLengthScale>
+      <FlameIdleColor>
+        <X>1.2</X>
+        <Y>0.5</Y>
+        <Z>1.5</Z>
+        <W>0.75</W>
+      </FlameIdleColor>
+      <FlameFullColor>
+        <X>0.1</X>
+        <Y>0.8</Y>
+        <Z>0.8</Z>
+        <W>0.75</W>
+      </FlameFullColor>
+      <FlamePointMaterial>EngineThrustMiddle</FlamePointMaterial>
+      <FlameLengthMaterial>SciFiEngineThrustMiddle</FlameLengthMaterial>
+      <FlameFlare>LargeGridSmallThruster</FlameFlare>
+      <FlameVisibilityDistance>150</FlameVisibilityDistance>
+      <FlameGlareQuerySize>1</FlameGlareQuerySize>
+      <PrimarySound>LrgShipSmJet</PrimarySound>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>15</PCU>      
+	  <EmissiveColorPreset>Default</EmissiveColorPreset>
+    </Definition>		
+
+
+
+		
+		
+<!-- Plasma Generator -->
+        <Definition xsi:type="MyObjectBuilder_HydrogenEngineDefinition">
+            <Id>
+                <TypeId>HydrogenEngine</TypeId>
+                <SubtypeId>MA_Plasma_Generator</SubtypeId>
+            </Id>
+            <DisplayName>Plasma Generator</DisplayName>
+            <Description>Turns Plasma Gas into Electrical Power.
+By Allied Astronautical.</Description>
+            <Icon>Textures\GUI\Icons\MA_Plasma_Generator.png</Icon>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="3" z="2" />
+            <ModelOffset x="0" y="0" z="0" />
+			<Center x="0" y="1" z="0" />			
+            <Model>Models\MA_Reactor\MA_Plasma_Generator.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="80" />
+                <Component Subtype="Construction" Count="60" />
+                <Component Subtype="LargeTube" Count="12" />
+                <Component Subtype="SmallTube" Count="20" />
+                <Component Subtype="Motor" Count="12" />
+                <Component Subtype="Computer" Count="4" />
+                <Component Subtype="PowerCell" Count="1" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="SteelPlate" Count="20" />
+            </Components>
+            <CriticalComponent Subtype="PowerCell" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.12" StartY="0.1" EndX="0.88" EndY="2.9"/>
+				<MountPoint Side="Back" StartX="0.08" StartY="2.06" EndX="0.92" EndY="2.92"/>
+				<MountPoint Side="Back" StartX="0.39" StartY="1.01" EndX="0.61" EndY="1.6"/>
+				<MountPoint Side="Back" StartX="0.0" StartY="0.8" EndX="1.0" EndY="1.02"/>
+				<MountPoint Side="Left" StartX="0.5" StartY="2.02" EndX="1.91" EndY="2.87"/>
+				<MountPoint Side="Left" StartX="0.1" StartY="0.1" EndX="0.5" EndY="2.9"/>
+				<MountPoint Side="Left" StartX="0.5" StartY="0.83" EndX="2.0" EndY="1.01"/>
+				<MountPoint Side="Right" StartX="1.5" StartY="0.1" EndX="1.9" EndY="2.9"/>
+				<MountPoint Side="Right" StartX="0.09" StartY="2.02" EndX="1.5" EndY="2.87"/>
+				<MountPoint Side="Right" StartX="0.0" StartY="0.83" EndX="1.5" EndY="1.01"/>
+				<MountPoint Side="Top" StartX="0.08" StartY="0.08" EndX="0.92" EndY="1.92"/>
+				<MountPoint Side="Bottom" StartX="0.0" StartY="0.0" EndX="1.0" EndY="2.0"/>
+			</MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\HydrogenEngine_Construction1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\HydrogenEngine_Construction2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\HydrogenEngine_Construction3.mwm" />
+            </BuildProgressModels>
+			<BlockPairName>MA_Plasma_Generator</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>60</BuildTimeSeconds>
+            <ResourceSinkGroup>Generators</ResourceSinkGroup>
+            <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+            <MaxPowerOutput>300</MaxPowerOutput>
+            <FuelCapacity>100000</FuelCapacity>
+				
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <IsAirTight>false</IsAirTight>
+            <InventorySize>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </InventorySize>
+            <FuelInfos>
+                <FuelInfo>
+                    <Id>
+                        <TypeId>GasProperties</TypeId>
+                        <SubtypeId>Hydrogen</SubtypeId>
+                    </Id>
+                </FuelInfo>
+            </FuelInfos>
+            <FuelProductionToCapacityMultiplier>0.01</FuelProductionToCapacityMultiplier>
+            <PrimarySound>ArcBlockHydrogenEngine</PrimarySound>
+
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <DestroyEffect>Explosion_Warhead_02</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+
+            <AnimationSpeed>6</AnimationSpeed>
+<!--            <PistonAnimationMin>-0.15</PistonAnimationMin>
+            <PistonAnimationMax>0.01</PistonAnimationMax>
+            <PistonAnimationOffsets>
+                <float>0.5</float>
+                <float>0.0</float>
+                <float>0.0</float>
+                <float>0.0</float>
+                <float>0.5</float>
+                <float>0.0</float>
+                <float>0.5</float>
+                <float>0.5</float>
+                <float>0.0</float>
+                <float>0.5</float>
+            </PistonAnimationOffsets>
+-->			
+            <AnimationSpinUpSpeed>5</AnimationSpinUpSpeed>
+            <AnimationSpinDownSpeed>20</AnimationSpinDownSpeed>
+            <PCU>25</PCU>
+        </Definition>		
+
+		
+		
+
+	
+	
+
+
+		
+    </CubeBlocks>
+    <BlockPositions></BlockPositions>
+</Definitions>
